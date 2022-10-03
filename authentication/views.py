@@ -27,12 +27,13 @@ def signup(request):
 
         return redirect('signin')
 
-
-
-
     return render(request, "authentication/signup.html")
 
 def signin(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        pass1 = request.POST['pass1']
+
     return render(request, "authentication/signin.html")
 
 def signout(request):
